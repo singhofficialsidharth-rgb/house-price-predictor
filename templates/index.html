@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AI House Price Predictor</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="background">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">
+          <span>🏠</span>
+
+          <h2>AI House Predictor</h2>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+
+          <li><a href="#about">About</a></li>
+
+          <li><a href="#predict">Predict</a></li>
+
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="themeToggle" class="theme-toggle">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" data-aos="fade-up">
+      <div class="hero-left">
+        <span class="badge"> ⭐ 94.25% Accurate AI Model </span>
+
+        <h1>
+          Predict House Prices
+
+          <span>Using Artificial Intelligence</span>
+        </h1>
+
+        <p>
+          Our Machine Learning model estimates residential property prices
+          instantly using property details, location metrics, amenities and
+          market information.
+        </p>
+
+        <a href="#predict">
+          <button class="hero-btn">Predict Price →</button>
+        </a>
+      </div>
+
+      <div class="hero-right">
+        <img
+          src="{{ url_for('static', filename='images/hero_house.jpg') }}"
+          alt="House"
+        />
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats" data-aos="zoom-in">
+      <div class="card">
+        <i class="fa-solid fa-chart-line stat-icon"></i>
+
+        <h2>94.25%</h2>
+
+        <p>Model Accuracy</p>
+      </div>
+
+      <div class="card">
+        <h2>25,000+</h2>
+
+        <p>Properties Analysed</p>
+      </div>
+
+      <div class="card">
+        <h2>&lt;1 sec</h2>
+
+        <p>Prediction Time</p>
+      </div>
+
+      <div class="card">
+        <h2>AI</h2>
+
+        <p>Gradient Boosting</p>
+      </div>
+    </section>
+
+    <!-- ================= PREDICTION DASHBOARD ================= -->
+
+    <section class="predict-section" id="predict">
+      <div class="section-title">
+        <h2>AI Property Valuation Dashboard</h2>
+
+        <p>Fill in the property information to estimate its market value.</p>
+      </div>
+
+      <form id="predictionForm">
+        <!-- PROPERTY -->
+
+        <div class="dashboard-card" data-aos="fade-right">
+          <h3>
+            <i class="fa-solid fa-house"></i>
+            Property Information
+          </h3>
+
+          <div class="grid">
+            <input
+              type="number"
+              id="area"
+              placeholder="Area (Sq Ft)"
+              value="1500"
+            />
+
+            <input
+              type="number"
+              id="bedrooms"
+              placeholder="Bedrooms"
+              value="3"
+            />
+
+            <input
+              type="number"
+              id="bathrooms"
+              placeholder="Bathrooms"
+              value="2"
+            />
+
+            <input type="number" id="parking" placeholder="Parking" value="1" />
+
+            <input type="number" id="floor" placeholder="Floor" value="4" />
+
+            <input
+              type="number"
+              id="totalfloors"
+              placeholder="Total Floors"
+              value="10"
+            />
+
+            <input
+              type="number"
+              id="age"
+              placeholder="Property Age"
+              value="5"
+            />
+          </div>
+        </div>
+
+        <!-- LOCATION -->
+
+        <div class="dashboard-card" data-aos="fade-left">
+          <h3>
+            <i class="fa-solid fa-location-dot"></i>
+            Location
+          </h3>
+
+          <div class="grid">
+            <select id="city">
+              <option>Delhi</option>
+              <option>Mumbai</option>
+              <option selected>Bangalore</option>
+              <option>Hyderabad</option>
+              <option>Pune</option>
+            </select>
+            <input
+              type="text"
+              id="locality"
+              value="Whitefield"
+              placeholder="Locality"
+            />
+
+            <select id="property">
+              <option selected>Apartment</option>
+              <option>Villa</option>
+              <option>Independent House</option>
+            </select>
+
+            <select id="furnishing">
+              <option selected>Furnished</option>
+              <option>Semi-Furnished</option>
+              <option>Unfurnished</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- LOCATION METRICS -->
+
+        <div class="dashboard-card" data-aos="fade-up">
+          <h3>
+            <i class="fa-solid fa-chart-column"></i>
+            Location Metrics
+          </h3>
+
+          <div class="grid">
+            <input
+              type="number"
+              id="city_distance"
+              value="8"
+              placeholder="Distance to City Center"
+            />
+
+            <input
+              type="number"
+              id="school_distance"
+              value="1"
+              placeholder="School Distance"
+            />
+
+            <input
+              type="number"
+              id="hospital_distance"
+              value="2"
+              placeholder="Hospital Distance"
+            />
+
+            <input
+              type="number"
+              id="metro_distance"
+              value="0.8"
+              placeholder="Metro Distance"
+            />
+
+            <input
+              type="number"
+              id="crime"
+              value="35"
+              placeholder="Crime Index"
+            />
+
+            <input
+              type="number"
+              id="income"
+              value="82"
+              placeholder="Income Index"
+            />
+
+            <input
+              type="number"
+              id="aqi"
+              value="58"
+              placeholder="Air Quality Index"
+            />
+          </div>
+        </div>
+
+        <!-- AMENITIES -->
+
+        <div class="dashboard-card" data-aos="zoom-in">
+          <h3>
+            <i class="fa-solid fa-star"></i>
+            Amenities
+          </h3>
+
+          <div class="checkbox-grid">
+            <label>
+              <input type="checkbox" id="lift" />
+              Lift
+            </label>
+
+            <label>
+              <input type="checkbox" id="gym" />
+              Gym
+            </label>
+
+            <label>
+              <input type="checkbox" id="pool" />
+              Swimming Pool
+            </label>
+
+            <label>
+              <input type="checkbox" id="park" />
+              Park Nearby
+            </label>
+
+            <label>
+              <input type="checkbox" id="security" />
+              Security
+            </label>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button type="button" class="sample-button" onclick="loadSample()">
+            🏠 Load Sample Property
+          </button>
+
+          <button type="submit" class="predict-button">🤖 Predict Price</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ================= RESULT ================= -->
+
+    <section class="result-section">
+      <div id="loader" class="loader hidden">
+        <div class="spinner"></div>
+
+        <p>AI is predicting...</p>
+      </div>
+      <div class="result-card" data-aos="flip-up">
+        <h2>Estimated Property Value</h2>
+
+        <h1 id="result">₹0</h1>
+
+        <div class="badge-price">Budget Property</div>
+
+        <div class="model-info">
+          <div>
+            <h3>Model</h3>
+
+            <p>Gradient Boosting</p>
+          </div>
+
+          <div>
+            <h3>Accuracy</h3>
+
+            <p>94.25%</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+    </script>
+  </body>
+</html>
