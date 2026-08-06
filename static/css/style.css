@@ -8,7 +8,7 @@
   --primary: #38bdf8;
   --secondary: #2563eb;
 
-  --input: #ffffff;
+  --input: #102040;
 }
 
 body.light-theme {
@@ -56,6 +56,15 @@ body.light-theme .checkbox-grid label input {
   accent-color: var(--primary);
 }
 
+body.light-theme .field-group label {
+  color: var(--text);
+}
+
+body.light-theme .field-group input,
+body.light-theme .field-group select {
+  border-color: rgba(37, 99, 235, 0.18);
+}
+
 body.light-theme .result-card {
   background: var(--card);
 }
@@ -83,6 +92,13 @@ body.light-theme .sample-button:hover {
 
 body.light-theme .section-title h2 {
   color: var(--text);
+}
+
+/* Keep text legible on the blue call-to-action elements in light mode. */
+body.light-theme .hero-btn,
+body.light-theme .predict-button,
+body.light-theme .badge {
+  color: #ffffff;
 }
 
 
@@ -346,17 +362,52 @@ body {
   gap: 20px;
 }
 
-.grid input,
-.grid select {
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.01em;
+}
+
+.field-group input,
+.field-group select {
   padding: 15px;
-
-  border: none;
-
+  border: 1px solid rgba(56, 189, 248, 0.2);
   border-radius: 10px;
-
   font-size: 15px;
-
   background: var(--input);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.field-group select {
+  background-image: linear-gradient(45deg, transparent 50%, var(--text) 50%),
+    linear-gradient(135deg, var(--text) 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1.2em), calc(100% - 14px) calc(1.2em);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 42px;
+}
+
+.field-group input:focus,
+.field-group select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+.field-group select option {
+  background: var(--input);
+  color: var(--text);
 }
 
 .checkbox-grid {

@@ -132,7 +132,7 @@ function loadSample(){
     document.getElementById("city_distance").value = 8;
     document.getElementById("school_distance").value = 1;
     document.getElementById("hospital_distance").value = 2;
-    document.getElementById("metro_distance").value = 0.8;
+    document.getElementById("metro_distance").value = 1;
     document.getElementById("crime").value = 35;
     document.getElementById("income").value = 82;
     document.getElementById("aqi").value = 58;

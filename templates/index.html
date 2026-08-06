@@ -140,44 +140,40 @@
           </h3>
 
           <div class="grid">
-            <input
-              type="number"
-              id="area"
-              placeholder="Area (Sq Ft)"
-              value="1500"
-            />
+            <div class="field-group">
+              <label for="area">Area (Sq Ft)</label>
+              <input type="number" id="area" name="area" />
+            </div>
 
-            <input
-              type="number"
-              id="bedrooms"
-              placeholder="Bedrooms"
-              value="3"
-            />
+            <div class="field-group">
+              <label for="bedrooms">No. of Bedrooms</label>
+              <input type="number" id="bedrooms" name="bedrooms" />
+            </div>
 
-            <input
-              type="number"
-              id="bathrooms"
-              placeholder="Bathrooms"
-              value="2"
-            />
+            <div class="field-group">
+              <label for="bathrooms">No. of Bathrooms</label>
+              <input type="number" id="bathrooms" name="bathrooms" />
+            </div>
 
-            <input type="number" id="parking" placeholder="Parking" value="1" />
+            <div class="field-group">
+              <label for="parking">Parking</label>
+              <input type="number" id="parking" name="parking" />
+            </div>
 
-            <input type="number" id="floor" placeholder="Floor" value="4" />
+            <div class="field-group">
+              <label for="floor">Floor</label>
+              <input type="number" id="floor" name="floor" />
+            </div>
 
-            <input
-              type="number"
-              id="totalfloors"
-              placeholder="Total Floors"
-              value="10"
-            />
+            <div class="field-group">
+              <label for="totalfloors">Total Floors</label>
+              <input type="number" id="totalfloors" name="totalfloors" />
+            </div>
 
-            <input
-              type="number"
-              id="age"
-              placeholder="Property Age"
-              value="5"
-            />
+            <div class="field-group">
+              <label for="age">Property Age</label>
+              <input type="number" id="age" name="age" />
+            </div>
           </div>
         </div>
 
@@ -190,31 +186,39 @@
           </h3>
 
           <div class="grid">
-            <select id="city">
-              <option>Delhi</option>
-              <option>Mumbai</option>
-              <option selected>Bangalore</option>
-              <option>Hyderabad</option>
-              <option>Pune</option>
-            </select>
-            <input
-              type="text"
-              id="locality"
-              value="Whitefield"
-              placeholder="Locality"
-            />
+            <div class="field-group">
+              <label for="city">City</label>
+              <select id="city" name="city">
+                <option>Delhi</option>
+                <option>Mumbai</option>
+                <option selected>Bangalore</option>
+                <option>Hyderabad</option>
+                <option>Pune</option>
+              </select>
+            </div>
 
-            <select id="property">
-              <option selected>Apartment</option>
-              <option>Villa</option>
-              <option>Independent House</option>
-            </select>
+            <div class="field-group">
+              <label for="locality">Locality</label>
+              <input type="text" id="locality" name="locality" />
+            </div>
 
-            <select id="furnishing">
-              <option selected>Furnished</option>
-              <option>Semi-Furnished</option>
-              <option>Unfurnished</option>
-            </select>
+            <div class="field-group">
+              <label for="property">Property Type</label>
+              <select id="property" name="property">
+                <option selected>Apartment</option>
+                <option>Villa</option>
+                <option>Independent House</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="furnishing">Furnishing</label>
+              <select id="furnishing" name="furnishing">
+                <option selected>Furnished</option>
+                <option>Semi-Furnished</option>
+                <option>Unfurnished</option>
+              </select>
+            </div>
           </div>
         </div>
 
@@ -227,54 +231,40 @@
           </h3>
 
           <div class="grid">
-            <input
-              type="number"
-              id="city_distance"
-              value="8"
-              placeholder="Distance to City Center"
-            />
+            <div class="field-group">
+              <label for="city_distance">Distance to City Center</label>
+              <input type="number" id="city_distance" name="city_distance" />
+            </div>
 
-            <input
-              type="number"
-              id="school_distance"
-              value="1"
-              placeholder="School Distance"
-            />
+            <div class="field-group">
+              <label for="school_distance">School Distance</label>
+              <input type="number" id="school_distance" name="school_distance" />
+            </div>
 
-            <input
-              type="number"
-              id="hospital_distance"
-              value="2"
-              placeholder="Hospital Distance"
-            />
+            <div class="field-group">
+              <label for="hospital_distance">Hospital Distance</label>
+              <input type="number" id="hospital_distance" name="hospital_distance" />
+            </div>
 
-            <input
-              type="number"
-              id="metro_distance"
-              value="0.8"
-              placeholder="Metro Distance"
-            />
+            <div class="field-group">
+              <label for="metro_distance">Metro Distance</label>
+              <input type="number" id="metro_distance" name="metro_distance" />
+            </div>
 
-            <input
-              type="number"
-              id="crime"
-              value="35"
-              placeholder="Crime Index"
-            />
+            <div class="field-group">
+              <label for="crime">Crime Index</label>
+              <input type="number" id="crime" name="crime" />
+            </div>
 
-            <input
-              type="number"
-              id="income"
-              value="82"
-              placeholder="Income Index"
-            />
+            <div class="field-group">
+              <label for="income">Income Index</label>
+              <input type="number" id="income" name="income" />
+            </div>
 
-            <input
-              type="number"
-              id="aqi"
-              value="58"
-              placeholder="Air Quality Index"
-            />
+            <div class="field-group">
+              <label for="aqi">Air Quality Index</label>
+              <input type="number" id="aqi" name="aqi" />
+            </div>
           </div>
         </div>
 
